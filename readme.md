@@ -1,9 +1,6 @@
-> **Important: This package is not actively maintained.** For bug fixes and new features, please fork.
-
 BootForms
 ===============
 
-[![This Project Has Been Deprecated.](http://www.repostatus.org/badges/0.1.0/abandoned.svg)](http://www.repostatus.org/#abandoned)
 [![Code Climate](https://codeclimate.com/github/adamwathan/bootforms/badges/gpa.svg)](https://codeclimate.com/github/adamwathan/bootforms)
 [![Coverage Status](https://coveralls.io/repos/adamwathan/bootforms/badge.svg?branch=master)](https://coveralls.io/r/adamwathan/bootforms?branch=master)
 
@@ -164,7 +161,7 @@ BootForms makes a few decisions for you and allows you to pare it down a bit mor
 {!! BootForm::open() !!}
   {!! BootForm::text('First Name', 'first_name') !!}
   {!! BootForm::text('Last Name', 'last_name') !!}
-  {!! BootForm::date('Date of Birth', 'date_of_birth') !!}
+  {!! BootForm::text('Date of Birth', 'date_of_birth') !!}
   {!! BootForm::email('Email', 'email') !!}
   {!! BootForm::password('Password', 'password') !!}
   {!! BootForm::submit('Submit') !!}

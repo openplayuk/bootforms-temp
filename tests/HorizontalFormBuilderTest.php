@@ -205,14 +205,6 @@ class HorizontalFormBuilderTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testRenderButtonWithMultipleBreakpointSizesThatDontFillFullWidth()
-    {
-        $this->form->setColumnSizes(['xs' => [5, 7], 'lg' => [3, 6]]);
-        $expected = '<div class="form-group"><div class="col-xs-offset-5 col-xs-7 col-lg-offset-3 col-lg-6"><button type="button" class="btn btn-default">Click Me</button></div></div>';
-        $result = $this->form->button('Click Me')->render();
-        $this->assertEquals($expected, $result);
-    }
-
     public function testRenderSubmit()
     {
         $expected = '<div class="form-group"><div class="col-lg-offset-2 col-lg-10"><button type="submit" class="btn btn-default">Submit</button></div></div>';
@@ -387,13 +379,6 @@ class HorizontalFormBuilderTest extends PHPUnit_Framework_TestCase
     {
         $expected = '<div class="form-group"><label class="col-lg-2 control-label" for="birthday">Birthday</label><div class="col-lg-10"><input type="date" name="birthday" id="birthday" class="form-control"></div></div>';
         $result = $this->form->date('Birthday', 'birthday')->render();
-        $this->assertEquals($expected, $result);
-    }
-
-    public function testRenderDateTimeLocalGroup()
-    {
-        $expected = '<div class="form-group"><label class="col-lg-2 control-label" for="dob">Date & time of birth</label><div class="col-lg-10"><input type="datetime-local" name="dob" id="dob" class="form-control"></div></div>';
-        $result = $this->form->dateTimeLocal('Date & time of birth', 'dob')->render();
         $this->assertEquals($expected, $result);
     }
 

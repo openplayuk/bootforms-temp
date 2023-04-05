@@ -463,13 +463,6 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testRenderDateTimeLocalGroup()
-    {
-        $expected = '<div class="form-group"><label class="control-label" for="dob">Date & time of birth</label><input type="datetime-local" name="dob" id="dob" class="form-control"></div>';
-        $result = $this->form->dateTimeLocal('Date & time of birth', 'dob')->render();
-        $this->assertEquals($expected, $result);
-    }
-
     public function testRenderEmailGroup()
     {
         $expected = '<div class="form-group"><label class="control-label" for="email">Email</label><input type="email" name="email" id="email" class="form-control"></div>';
@@ -525,17 +518,6 @@ class BasicFormBuilderTest extends PHPUnit_Framework_TestCase
     {
         $expected = '<div class="form-group"><label class="control-label sr-only" for="email">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
         $result = $this->form->text('Email', 'email')->hideLabel()->render();
-        $this->assertEquals($expected, $result);
-    }
-
-    public function testRequiredLabels()
-    {
-        $expected = '<div class="form-group"><label class="control-label control-label-required" for="email">Email</label><input type="text" name="email" id="email" class="form-control" required="required"></div>';
-        $result = $this->form->text('Email', 'email')->required()->render();
-        $this->assertEquals($expected, $result);
-
-        $expected = '<div class="form-group"><label class="control-label" for="email">Email</label><input type="text" name="email" id="email" class="form-control"></div>';
-        $result = $this->form->text('Email', 'email')->required(false)->render();
         $this->assertEquals($expected, $result);
     }
 

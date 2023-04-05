@@ -6,6 +6,7 @@ use AdamWathan\BootForms\Elements\GroupWrapper;
 use AdamWathan\BootForms\Elements\HelpBlock;
 use AdamWathan\BootForms\Elements\InputGroup;
 use AdamWathan\Form\FormBuilder;
+use Illuminate\Support\Str;
 
 class BasicFormBuilder
 {
@@ -19,7 +20,7 @@ class BasicFormBuilder
     protected function formGroup($label, $name, $control)
     {
         $label = $this->builder->label($label)->addClass('control-label')->forId($name);
-        $control->id($name)->addClass('form-control');
+        $control->id(Str::slug($name))->addClass('form-control');
 
         $formGroup = new FormGroup($label, $control);
 
@@ -130,13 +131,6 @@ class BasicFormBuilder
     public function date($label, $name, $value = null)
     {
         $control = $this->builder->date($name)->value($value);
-
-        return $this->formGroup($label, $name, $control);
-    }
-
-    public function dateTimeLocal($label, $name, $value = null)
-    {
-        $control = $this->builder->dateTimeLocal($name)->value($value);
 
         return $this->formGroup($label, $name, $control);
     }
